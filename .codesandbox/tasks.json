@@ -21,7 +21,8 @@
     },
     "git submodule update --init --recursive": {
       "name": "git submodule update --init --recursive",
-      "command": "git submodule update --init --recursive"
+      "command": "git submodule update --init --recursive",
+      "runAtStart": true
     }
   }
 }
