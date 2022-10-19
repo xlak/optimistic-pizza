@@ -1,3 +1,5 @@
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+
 import createServer from '@tomphttp/bare-server-node';
 import http from 'http';
 import nodeStatic from 'node-static';
