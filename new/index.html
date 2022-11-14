@@ -1,0 +1,14 @@
+<h1>Loading Proxy</h1>
+<p>If everything went right, you should be redirected automatically depending on your web filter. If not, please open an issue on GitHub.</p>
+
+<script>
+const newProxy = "https://hapara.cf";
+const oldproxy = window.location.href.replace('8080', '8081');
+fetch("https://hapara.cf/check.txt", { mode: "no-cors" }).then((r) => {
+  if (!r.redirected) {
+      window.location = newProxy;
+  } else {
+      window.location = oldProxy;
+  }
+});
+</script>
