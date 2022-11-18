@@ -12,6 +12,14 @@ const server = http.createServer();
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
+  } else if (req.url.startsWith("/check")) {
+    const body = "OK";
+    res.writeHead(200, {
+      "Content-Length": Buffer.byteLength(body),
+      "Content-Type": "text/plain",
+      "Access-Control-Allow-Origin": "*",
+    });
+    res.end(body);
   } else {
     serve.serve(req, res);
   }
